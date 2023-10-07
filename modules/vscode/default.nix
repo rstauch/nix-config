@@ -1,3 +1,5 @@
+# Quelle: https://github.com/carlthome/dotfiles/tree/main/modules/home-manager/vscode
+
 { config, pkgs, lib, self, ... }:
 let
   settings-directory =

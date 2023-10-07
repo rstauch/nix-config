@@ -1,11 +1,11 @@
-{
-  config,
-  pkgs,
-  username,
-  nix-index-database,
-  ...
-}: let
-   vscode = import ./modules/vscode;
+{ config
+, pkgs
+, username
+, nix-index-database
+, ...
+}:
+let
+  vscode = import ./modules/vscode;
 
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
@@ -67,10 +67,14 @@
     shfmt
     fmt
     statix # nix
+    nixfmt
+    nixpkgs-fmt
+    nixpkgs-review
     sqlfluff
     tflint
   ];
-in {
+in
+{
   imports = [
     nix-index-database.hmModules.nix-index
     vscode
