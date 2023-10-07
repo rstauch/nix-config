@@ -5,6 +5,8 @@
   nix-index-database,
   ...
 }: let
+   vscode = import ./modules/vscode;
+
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
     bat
@@ -71,6 +73,7 @@
 in {
   imports = [
     nix-index-database.hmModules.nix-index
+    vscode
   ];
 
   home.stateVersion = "22.11";
