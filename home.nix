@@ -31,7 +31,6 @@
     #vim
     wget
     zip
-
     nerdfonts
   ];
 
@@ -39,33 +38,14 @@
     # FIXME: customize these stable packages to your liking for the languages that you use
 
     # key tools
-    #gnumake # for lunarvim
-    #gcc # for lunarvim
-    #gh # for bootstrapping
     just
 
     # core languages
-    #rustup
-    #go
-    #lua
     nodejs
     python
     typescript
 
-    # rust stuff
-    #cargo-cache
-    #cargo-expand
-
-    # local dev stuf
-    mkcert
-    httpie
-
-    # treesitter
-    tree-sitter
-
     # language servers
-    #ccls # c / c++
-    #gopls
     nodePackages.typescript-language-server
     pkgs.nodePackages.vscode-langservers-extracted # html, css, json, eslint
     nodePackages.yaml-language-server
@@ -83,6 +63,7 @@
     nodePackages.prettier
     shellcheck
     shfmt
+    fmt
     statix # nix
     sqlfluff
     tflint
@@ -99,13 +80,21 @@ in {
     homeDirectory = "/home/${username}";
 
     # FIXME: set your preferred $EDITOR
-    sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
+    # sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
+    # sessionVariables.DONT_PROMPT_WSL_INSTALL = "1";
+    # sessionVariables.EDITOR = "${pkgs.unstable.vscode}/bin/code";
+
     # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
+
+    # use VcXsrv
+    sessionVariables.DISPLAY = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
+
+    # other
+    # sessionVariables.TZ = "Europe/Berlin";
   };
 
-
- fonts.fontconfig.enable = true;
+  fonts.fontconfig.enable = true;
 
   home.packages =
     stable-packages
@@ -114,14 +103,11 @@ in {
     # FIXME: you can add anything else that doesn't fit into the above two lists in here
     [
       # pkgs.some-package
-       # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
       # pkgs.unstable.some-other-package
     ];
 
   # FIXME: if you want to version your LunarVim config, add it to the root of this repo and uncomment the next line
   # home.file.".config/lvim/config.lua".source = ./lvim_config.lua;
-
-  
 
   programs = {
     home-manager.enable = true;
@@ -168,18 +154,9 @@ in {
         side-by-side = true;
         navigate = true;
       };
-      userEmail = "robert.stauch@fluxdev.de"; # FIXME: set your git email
-      userName = "rstauch"; #FIXME: set your git username
+      userEmail = "robert.stauch@fluxdev.de";
+      userName = "Robert Stauch";
       extraConfig = {
-        # FIXME: uncomment the next lines if you want to be able to clone private https repos
-        # url = {
-        #   "https://oauth2:${secrets.github_token}@github.com" = {
-        #     insteadOf = "https://github.com";
-        #   };
-        #   "https://oauth2:${secrets.gitlab_token}@gitlab.com" = {
-        #     insteadOf = "https://gitlab.com";
-        #   };
-        # };
         push = {
           default = "current";
           autoSetupRemote = true;
