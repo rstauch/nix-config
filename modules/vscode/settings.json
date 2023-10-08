@@ -25,7 +25,6 @@
   },
   "cloudcode.autoDependencies": "off",
   "cloudcode.enableTelemetry": false,
-  "cmake.configureOnOpen": true,
   "debug.allowBreakpointsEverywhere": false,
   "debug.console.acceptSuggestionOnEnter": "on",
   "debug.console.closeOnEnd": true,
@@ -69,8 +68,6 @@
   "githubPullRequests.pullBranch": "always",
   "githubPullRequests.pushBranch": "always",
   "githubPullRequests.setAutoMerge": true,
-  "jupyter.askForKernelRestart": false,
-  "jupyter.runStartupCommands": ["%load_ext autoreload", "%autoreload 2"],
   "nix.enableLanguageServer": true,
   "nix.serverPath": "nil",
   "nix.serverSettings": {
@@ -102,10 +99,22 @@
   "workbench.editor.limit.excludeDirty": true,
   "workbench.editor.limit.value": 5,
   "workbench.enableExperiments": false,
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": true,
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.settings.enableNaturalLanguageSearch": false,
-  "workbench.startupEditor": "readme"
+  "workbench.startupEditor": "readme",
+
+  "security.workspace.trust.enabled": false,
+  "editor.minimap.enabled": false,
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "keyboard.dispatch": "keyCode",
+  "explorer.confirmDragAndDrop": false,
+  "window.title": "${activeEditorLong}",
+  "git.branchProtection": ["master", "main"],
+  "git.fetchOnPull": true,
+  "git.enableSmartCommit": true,
+  "git.allowForcePush": true,
+  "git.openRepositoryInParentFolders": "always",
+  "timeline.pageOnScroll": true
 }
