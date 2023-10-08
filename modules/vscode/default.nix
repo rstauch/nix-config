@@ -1,5 +1,7 @@
 # Quelle: https://github.com/carlthome/dotfiles/tree/main/modules/home-manager/vscode
 
+# TODO: will install from stable ?
+
 { config, pkgs, lib, self, ... }:
 let
   settings-directory =

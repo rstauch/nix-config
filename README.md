@@ -18,20 +18,25 @@ wsl -d NixOS
 sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
+# provide git
+nix-shell -p git
+
 # clone repo to tmp directory
-git clone https://github.com/rstauch/nix-config.git /tmp/configuration
+git clone https://github.com/rstauch/nix-config.git /tmp/nix-config
 
 # apply updates
+cd /tmp/nix-config
 sudo nixos-rebuild switch --flake .#nixos
 
 # reconnect to WSL shell
+exit # (nix shell)
 exit # (wsl)
 wsl -t NixOS
 wsl -d NixOS
 
 # move the configuration to the new home directory
 mkdir -p ~/projects/int
-mv /tmp/configuration ~/projects/int
+mv /tmp/nix-config ~/projects/int
 ```
 
 ## Mount existing .ssh folder from Windows
@@ -51,10 +56,10 @@ ssh -T git@github.com
 
 ```
 # bash
-C:\Windows\System32\wsl.exe --distribution NixOS -u rstauch --cd "~"
+C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
 
 # zsh
-C:\Windows\System32\wsl.exe --distribution NixOS -u rstauch --cd "~" -e bash -lc zsh
+C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~" -e bash -lc zsh
 ```
 
 ## Setup VcXsrv on Windows
