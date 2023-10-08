@@ -16,36 +16,39 @@ let
     du-dust
     fd
     findutils
-    fx
+    fx # terminal json viewer
     git
     git-crypt
     htop
     jq
     killall
-    mosh
-    #neovim
     procs
     ripgrep
-    sd
-    #tmux
     tree
     unzip
-    #vim
     wget
     zip
     nerdfonts
+    just
+    google-chrome
+    xdg-utils
+    dos2unix
+    openssl
+    xz
+    tldr
+
+    nodejs_18
+    yarn
+
+    # Make JSON greppable, https://github.com/tomnomnom/gron
+    gron
+    # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
+    q-text-as-data
+
   ];
 
   stable-packages = with pkgs; [
     # FIXME: customize these stable packages to your liking for the languages that you use
-
-    # key tools
-    just
-
-    # core languages
-    nodejs
-    python
-    typescript
 
     # language servers
     nodePackages.typescript-language-server
@@ -84,7 +87,6 @@ in
     username = "${username}";
     homeDirectory = "/home/${username}";
 
-    # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
 
     # use VcXsrv instead of wslg
@@ -92,6 +94,10 @@ in
 
     # other
     sessionVariables.TZ = "Europe/Berlin";
+
+    # sessionVariables.XCURSOR_SIZE = 16;
+    # sessionVariables.GDK_BACKEND = "x11";
+    # sessionVariables.LIBGL_ALWAYS_INDIRECT = "1";
   };
 
   fonts.fontconfig.enable = true;
