@@ -26,6 +26,10 @@ git clone https://github.com/rstauch/nix-config.git /tmp/nix-config
 
 # apply updates
 cd /tmp/nix-config
+
+# avoid issues by creating a settings files
+touch /home/nixos/.config/Code/User/settings.json
+
 sudo nixos-rebuild switch --flake .#nixos
 
 # reconnect to WSL shell

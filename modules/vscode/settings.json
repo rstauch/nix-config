@@ -23,8 +23,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "cloudcode.autoDependencies": "off",
-  "cloudcode.enableTelemetry": false,
   "debug.allowBreakpointsEverywhere": false,
   "debug.console.acceptSuggestionOnEnter": "on",
   "debug.console.closeOnEnd": true,
@@ -55,9 +53,6 @@
   "git.untrackedChanges": "separate",
   "github.copilot-labs.showBrushesLenses": false,
   "github.copilot-labs.showTestGenerationLenses": true,
-  "gitlens.hovers.enabled": false,
-  "gitlens.showWelcomeOnInstall": false,
-  "gitlens.plusFeatures.enabled": false,
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
@@ -117,5 +112,6 @@
   "git.allowForcePush": true,
   "git.openRepositoryInParentFolders": "always",
   "timeline.pageOnScroll": true,
-  "editor.mouseWheelScrollSensitivity": 3
+  "editor.mouseWheelScrollSensitivity": 3,
+  "workbench.colorTheme": "__vs"
 }

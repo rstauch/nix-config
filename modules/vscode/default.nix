@@ -32,7 +32,7 @@ in
     inherit userSettings extensions keybindings;
     enable = true;
     mutableExtensionsDir = false;
-    package = pkgs.vscode;
+    package = pkgs.unstable.vscode;
   };
 
   home.sessionVariables = {
