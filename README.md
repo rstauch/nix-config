@@ -23,9 +23,10 @@ nix-shell -p git
 
 # clone repo to tmp directory
 mkdir -p ~/projects/int
+cd ~/projects/int
 git clone https://github.com/rstauch/nix-config.git
 
-# avoid issues by creating a settings files
+# avoid issues by creating a vscode settings files
 mkdir -p /home/nixos/.config/Code/User
 touch /home/nixos/.config/Code/User/settings.json
 

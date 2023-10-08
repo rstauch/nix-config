@@ -84,19 +84,14 @@ in
     username = "${username}";
     homeDirectory = "/home/${username}";
 
-    # FIXME: set your preferred $EDITOR
-    # sessionVariables.EDITOR = "${pkgs.neovim}/bin/nvim";
-    # sessionVariables.DONT_PROMPT_WSL_INSTALL = "1";
-    # sessionVariables.EDITOR = "${pkgs.unstable.vscode}/bin/code";
-
     # FIXME: set your preferred $SHELL
     sessionVariables.SHELL = "/etc/profiles/per-user/${username}/bin/zsh";
 
-    # use VcXsrv
+    # use VcXsrv instead of wslg
     sessionVariables.DISPLAY = "$(cat /etc/resolv.conf | grep nameserver | awk '{print $2; exit;}'):0.0";
 
     # other
-    # sessionVariables.TZ = "Europe/Berlin";
+    sessionVariables.TZ = "Europe/Berlin";
   };
 
   fonts.fontconfig.enable = true;

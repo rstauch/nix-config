@@ -88,7 +88,6 @@
   "window.autoDetectColorScheme": true,
   "window.commandCenter": true,
   "window.restoreWindows": "none",
-  "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.excludeDirty": true,
@@ -113,5 +112,6 @@
   "git.openRepositoryInParentFolders": "always",
   "timeline.pageOnScroll": true,
   "editor.mouseWheelScrollSensitivity": 3,
-  "workbench.colorTheme": "Default Dark Modern"
+  "workbench.colorTheme": "Default Dark Modern",
+  "window.titleBarStyle": "native"
 }
