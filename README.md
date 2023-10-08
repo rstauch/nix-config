@@ -22,14 +22,14 @@ sudo nix-channel --update
 nix-shell -p git
 
 # clone repo to tmp directory
-git clone https://github.com/rstauch/nix-config.git /tmp/nix-config
-
-# apply updates
-cd /tmp/nix-config
+mkdir -p ~/projects/int
+git clone https://github.com/rstauch/nix-config.git
 
 # avoid issues by creating a settings files
+mkdir -p /home/nixos/.config/Code/User
 touch /home/nixos/.config/Code/User/settings.json
 
+# apply updates
 sudo nixos-rebuild switch --flake .#nixos
 
 # reconnect to WSL shell
@@ -37,10 +37,6 @@ exit # (nix shell)
 exit # (wsl)
 wsl -t NixOS
 wsl -d NixOS
-
-# move the configuration to the new home directory
-mkdir -p ~/projects/int
-mv /tmp/nix-config ~/projects/int
 ```
 
 ## Mount existing .ssh folder from Windows

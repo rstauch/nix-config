@@ -113,5 +113,5 @@
   "git.openRepositoryInParentFolders": "always",
   "timeline.pageOnScroll": true,
   "editor.mouseWheelScrollSensitivity": 3,
-  "workbench.colorTheme": "__vs"
+  "workbench.colorTheme": "Default Dark Modern"
 }
