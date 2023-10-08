@@ -57,8 +57,6 @@ let
 
     # formatters and linters
     alejandra # nix
-    black # python
-    ruff # python
     deadnix # nix
     golangci-lint
     lua52Packages.luacheck
