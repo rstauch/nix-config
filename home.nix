@@ -7,6 +7,7 @@
 let
   vscode = import ./modules/vscode;
   firefox = import ./modules/firefox;
+  java = import ./modules/java;
 
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
@@ -73,6 +74,7 @@ in
     nix-index-database.hmModules.nix-index
     vscode
     firefox
+    java
   ];
 
   home.stateVersion = "22.11";
