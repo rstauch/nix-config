@@ -8,6 +8,7 @@ let
   vscode = import ./modules/vscode;
   firefox = import ./modules/firefox;
   java = import ./modules/java;
+  broot = import ./modules/broot;
 
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
@@ -77,6 +78,7 @@ in
     vscode
     firefox
     java
+    broot
   ];
 
   home.stateVersion = "22.11";

@@ -108,9 +108,9 @@ code .
 
 - zsh config
 - direnv
-- broot + config
 - intelliJ ultimate
 - structure to include nix-darwin config (by hostname)
 - not working: graalvm, google-chrome, postman (flatpak?)
 - readme remote flake
 - document shortcuts
+- bat mouse wheel scrolling
