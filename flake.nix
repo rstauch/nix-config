@@ -52,15 +52,17 @@
         };
       };
 
-      mkNixosConfiguration = {
-        system ? "x86_64-linux",
-        hostname,
-        username,
-        args ? {},
-        modules,
-      }: let
-        specialArgs = argDefaults // {inherit hostname username;} // args;
-      in
+      mkNixosConfiguration =
+        { system ? "x86_64-linux"
+        , hostname
+        , username
+        , args ? { }
+        , modules
+        ,
+        }:
+        let
+          specialArgs = argDefaults // { inherit hostname username; } // args;
+        in
         nixpkgs.lib.nixosSystem {
           inherit system specialArgs;
           modules =
@@ -70,12 +72,13 @@
             ]
             ++ modules;
         };
-    in {
+    in
+    {
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
       nixosConfigurations.nixos = mkNixosConfiguration {
         hostname = "nixos";
-        username = "rstauch";
+        username = "nixos";
         modules = [
           nixos-wsl.nixosModules.wsl
           ./wsl.nix

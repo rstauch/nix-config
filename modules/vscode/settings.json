@@ -23,8 +23,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "cloudcode.autoDependencies": "off",
-  "cloudcode.enableTelemetry": false,
   "debug.allowBreakpointsEverywhere": false,
   "debug.console.acceptSuggestionOnEnter": "on",
   "debug.console.closeOnEnd": true,
@@ -55,9 +53,6 @@
   "git.untrackedChanges": "separate",
   "github.copilot-labs.showBrushesLenses": false,
   "github.copilot-labs.showTestGenerationLenses": true,
-  "gitlens.hovers.enabled": false,
-  "gitlens.showWelcomeOnInstall": false,
-  "gitlens.plusFeatures.enabled": false,
   "github.copilot.enable": {
     "*": true,
     "yaml": true,
@@ -93,15 +88,14 @@
   "window.autoDetectColorScheme": true,
   "window.commandCenter": true,
   "window.restoreWindows": "none",
-  "window.titleBarStyle": "custom",
   "window.zoomLevel": 0,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.excludeDirty": true,
   "workbench.editor.limit.value": 5,
   "workbench.enableExperiments": false,
   "workbench.layoutControl.enabled": true,
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.startupEditor": "readme",
 
@@ -117,5 +111,7 @@
   "git.allowForcePush": true,
   "git.openRepositoryInParentFolders": "always",
   "timeline.pageOnScroll": true,
-  "editor.mouseWheelScrollSensitivity": 3
+  "editor.mouseWheelScrollSensitivity": 3,
+  "workbench.colorTheme": "Default Dark Modern",
+  "window.titleBarStyle": "native"
 }
