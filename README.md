@@ -1,6 +1,4 @@
-# WSL2 NixOS Dotfiles
-
-## Setup WSL Distro
+# Setup WSL Distro
 
 Download _nixos-wsl.tar.gz_ from: https://github.com/nix-community/NixOS-WSL/releases (tested with version _23.5.5.2_).
 
@@ -46,9 +44,11 @@ wsl -d NixOS
 Only needs to be performed once:
 
 ```
-WINDOWS_USER=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '$env:UserName')
-ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~
-chmod 600 ~/.ssh/id_rsa
+WINDOWS_USER=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '$env:UserName' | tr -d '\r')
+echo $WINDOWS_USER
+ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~/.ssh
+# if required:
+# chmod 600 ~/.ssh/id_rsa
 
 # test connection
 ssh -T git@github.com
@@ -81,7 +81,7 @@ Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xla
 **Note**: Pot. use https://community.chocolatey.org/packages/vcxsrv#files (includes Firewall Rules).<BR/>
 **Note**: Pot. add shortcut to Windows autostart.
 
-## Development
+# Development
 
 Switch repo _https_ remote to _ssh_:
 
