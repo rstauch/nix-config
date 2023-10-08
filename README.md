@@ -8,7 +8,7 @@ Download _nixos-wsl.tar.gz_ from: https://github.com/nix-community/NixOS-WSL/rel
 # remove existing WSL distro if required
 # wsl --unregister NixOS
 
-# import NixOs-WSL distro
+# import downloaded NixOs-WSL distro
 wsl --import NixOS D:\code\wsl\NixOS\ D:\code\wsl\nixos-wsl.tar.gz --version 2
 
 # start distro
@@ -18,12 +18,13 @@ wsl -d NixOS
 sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
-# clone repo to tmp
+# clone repo to tmp directory
 git clone https://github.com/rstauch/nix-config.git /tmp/configuration
 
-sudo nixos-rebuild switch --flake /tmp/configuration
+# apply updates
+sudo nixos-rebuild switch --flake .#nixos
 
-# Reconnect to WSL shell
+# reconnect to WSL shell
 exit # (wsl)
 wsl -t NixOS
 wsl -d NixOS
@@ -33,10 +34,7 @@ mkdir -p ~/projects/int
 mv /tmp/configuration ~/projects/int
 ```
 
-<BR/>
-<BR/>
-
-## Mount .ssh folder from Windows
+## Mount existing .ssh folder from Windows
 
 Only needs to be performed once:
 
@@ -49,12 +47,19 @@ chmod 600 ~/.ssh/id_rsa
 ssh -T git@github.com
 ```
 
-<BR/>
-<BR/>
+## Create Windows shortcuts
+
+```
+# bash
+C:\Windows\System32\wsl.exe --distribution NixOS -u rstauch --cd "~"
+
+# zsh
+C:\Windows\System32\wsl.exe --distribution NixOS -u rstauch --cd "~" -e bash -lc zsh
+```
 
 ## Setup VcXsrv on Windows
 
-Download and install VcXsrv on Windows https://sourceforge.net/projects/vcxsrv/files/latest/download
+Download and install _VcXsrv_ on Windows https://sourceforge.net/projects/vcxsrv/files/latest/download
 
 Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xlaunch"`
 
@@ -65,11 +70,9 @@ Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xla
 <XLaunch WindowMode="MultiWindow" ClientMode="NoClient" LocalClient="False" Display="-1" LocalProgram="xcalc" RemoteProgram="xterm" RemotePassword="" PrivateKey="" RemoteHost="" RemoteUser="" XDMCPHost="" XDMCPBroadcast="False" XDMCPIndirect="False" Clipboard="True" ClipboardPrimary="False" ExtraParams="" Wgl="False" DisableAC="True" XDMCPTerminate="False"/>
 ```
 
-**Note**: Windows Firewall rules might need to be created (**Inbound Rules**) for _VcXsrv_.
-**Note:** Pot. use https://community.chocolatey.org/packages/vcxsrv#files (includes Firewall Rules)
-
-<BR/>
-<BR/>
+**Note**: Windows Firewall rules might need to be created (**Inbound Rules**) for _VcXsrv_.<BR/>
+**Note**: Pot. use https://community.chocolatey.org/packages/vcxsrv#files (includes Firewall Rules).<BR/>
+**Note**: Pot. add shortcut to Windows autostart.
 
 ## Development
 
