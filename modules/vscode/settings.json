@@ -94,8 +94,8 @@
   "workbench.editor.limit.value": 5,
   "workbench.enableExperiments": false,
   "workbench.layoutControl.enabled": true,
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.startupEditor": "readme",
 

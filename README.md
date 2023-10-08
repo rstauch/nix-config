@@ -21,7 +21,7 @@ sudo nix-channel --update
 # provide git
 nix-shell -p git
 
-# clone repo to tmp directory
+# clone repo
 mkdir -p ~/projects/int
 cd ~/projects/int
 git clone https://github.com/rstauch/nix-config.git
@@ -31,6 +31,7 @@ mkdir -p /home/nixos/.config/Code/User
 touch /home/nixos/.config/Code/User/settings.json
 
 # apply updates
+cd ~/projects/int/nix-config
 sudo nixos-rebuild switch --flake .#nixos
 
 # reconnect to WSL shell
