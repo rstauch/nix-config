@@ -46,7 +46,7 @@ Only needs to be performed once:
 ```
 WINDOWS_USER=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '$env:UserName' | tr -d '\r')
 echo $WINDOWS_USER
-ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~/.ssh
+ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~
 # if required:
 # chmod 600 ~/.ssh/id_rsa
 
