@@ -1,14 +1,13 @@
-{
-  username,
-  hostname,
-  pkgs,
-  ...
+{ username
+, hostname
+, pkgs
+, ...
 }: {
   networking.hostName = "${hostname}";
 
   programs.zsh.enable = true;
-  environment.pathsToLink = ["/share/zsh"];
-  environment.shells = [pkgs.zsh];
+  environment.pathsToLink = [ "/share/zsh" ];
+  environment.shells = [ pkgs.zsh ];
 
   environment.enableAllTerminfo = true;
 
@@ -24,7 +23,7 @@
   };
 
   environment.systemPackages = [
-    (import ./win32yank.nix {inherit pkgs;})
+    (import ./win32yank.nix { inherit pkgs; })
   ];
 
   home-manager.users.${username} = {
@@ -56,7 +55,7 @@
 
   nix = {
     settings = {
-      trusted-users = [username];
+      trusted-users = [ username ];
       accept-flake-config = true;
       auto-optimise-store = true;
     };

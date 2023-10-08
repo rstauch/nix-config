@@ -6,6 +6,7 @@
 }:
 let
   vscode = import ./modules/vscode;
+  firefox = import ./modules/firefox;
 
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
@@ -19,32 +20,25 @@ let
     fx # terminal json viewer
     git
     git-crypt
+    gron # Make JSON greppable, https://github.com/tomnomnom/gron
     htop
     jq
+    just
     killall
+    nerdfonts
+    nodejs_18
+    openssl
     procs
+    q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
     ripgrep
+    tldr
     tree
     unzip
     wget
-    zip
-    nerdfonts
-    just
-    google-chrome
     xdg-utils
-    dos2unix
-    openssl
     xz
-    tldr
-
-    nodejs_18
     yarn
-
-    # Make JSON greppable, https://github.com/tomnomnom/gron
-    gron
-    # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
-    q-text-as-data
-
+    zip
   ];
 
   stable-packages = with pkgs; [
@@ -56,7 +50,6 @@ let
     nodePackages.yaml-language-server
     sumneko-lua-language-server
     nil # nix
-    nodePackages.pyright
 
     # formatters and linters
     alejandra # nix
@@ -79,6 +72,7 @@ in
   imports = [
     nix-index-database.hmModules.nix-index
     vscode
+    firefox
   ];
 
   home.stateVersion = "22.11";
