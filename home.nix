@@ -15,6 +15,7 @@ let
     bottom
     coreutils
     curl
+    dos2unix
     du-dust
     fd
     findutils
@@ -40,11 +41,12 @@ let
     xz
     yarn
     zip
+
+    # postman # https://github.com/NixOS/nixpkgs/issues/259147
   ];
 
   stable-packages = with pkgs; [
     # FIXME: customize these stable packages to your liking for the languages that you use
-
     # language servers
     nodePackages.typescript-language-server
     pkgs.nodePackages.vscode-langservers-extracted # html, css, json, eslint

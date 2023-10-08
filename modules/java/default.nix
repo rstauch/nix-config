@@ -8,6 +8,7 @@ let
     java = jdk;
   };
 
+  # clashes with jdk17 ?
   # graalvm = pkgs."graalvm${jdkVersion}-ce";
 
   maven = pkgs.unstable.maven.override { inherit jdk; };

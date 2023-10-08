@@ -103,3 +103,14 @@ Edit with VSCode:
 cd ~/projects/int/nix-config
 code .
 ```
+
+# TODO
+
+- zsh config
+- direnv
+- broot + config
+- intelliJ ultimate
+- structure to include nix-darwin config (by hostname)
+- not working: graalvm, google-chrome, postman (flatpak?)
+- readme remote flake
+- document shortcuts
