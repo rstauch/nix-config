@@ -116,5 +116,6 @@
   "git.enableSmartCommit": true,
   "git.allowForcePush": true,
   "git.openRepositoryInParentFolders": "always",
-  "timeline.pageOnScroll": true
+  "timeline.pageOnScroll": true,
+  "editor.mouseWheelScrollSensitivity": 3
 }
