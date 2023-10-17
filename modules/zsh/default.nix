@@ -144,8 +144,6 @@ in
       hmu = "cd ${config.home.homeDirectory}/projects/int/nix-config && sudo nixos-rebuild switch --flake .#nixos && gc && refresh";
       dot = "${pkgs.lib.getExe pkgs.vscode} ${config.home.homeDirectory}/projects/int/nix-config";
 
-      upd = "sudo apt-get update && sudo apt-get upgrade -y";
-
       pbcopy = "/mnt/c/Windows/System32/clip.exe";
       pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";
       explorer = "/mnt/c/Windows/explorer.exe";
