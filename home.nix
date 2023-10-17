@@ -96,6 +96,7 @@ in
     # other
     sessionVariables.TZ = "Europe/Berlin";
 
+    # unklar ob benötigt?
     # sessionVariables.XCURSOR_SIZE = 16;
     # sessionVariables.GDK_BACKEND = "x11";
     # sessionVariables.LIBGL_ALWAYS_INDIRECT = "1";
@@ -122,35 +123,11 @@ in
     nix-index.enableZshIntegration = true;
     nix-index-database.comma.enable = true;
 
-    # FIXME: disable this if you don't want to use the starship prompt
-    starship.enable = true;
-    starship.settings = {
-      aws.disabled = true;
-      gcloud.disabled = true;
-      kubernetes.disabled = false;
-      git_branch.style = "242";
-      directory.style = "blue";
-      directory.truncate_to_repo = false;
-      directory.truncation_length = 8;
-      python.disabled = true;
-      ruby.disabled = true;
-      hostname.ssh_only = false;
-      hostname.style = "bold green";
-    };
-
-    # FIXME: disable whatever you don't want
-    fzf.enable = true;
-    fzf.enableZshIntegration = true;
-    lsd.enable = true;
-    lsd.enableAliases = true;
-    zoxide.enable = true;
-    zoxide.enableZshIntegration = true;
-    broot.enable = true;
-    broot.enableZshIntegration = true;
-
+    # TODO: unklar ?!
     direnv.enable = true;
     direnv.enableZshIntegration = true;
     direnv.nix-direnv.enable = true;
+
 
     git = {
       enable = true;
@@ -202,31 +179,15 @@ in
           src = pkgs.fetchFromGitHub {
             owner = "chisui";
             repo = "zsh-nix-shell";
-            rev = "v0.5.0";
+            rev = "v0.5.0"; # TODO: move 0.7.0
             sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
           };
         }
       ];
 
       shellAliases = {
-        "..." = "./..";
-        "...." = "././..";
-        cd = "z";
         gc = "nix-collect-garbage --delete-old";
         refresh = "source ${config.home.homeDirectory}/.zshrc";
-        show_path = "echo $PATH | tr ':' '\n'";
-
-        # FIXME: add more git aliases here if you want them
-        gapa = "git add --patch";
-        grpa = "git reset --patch";
-        gst = "git status";
-        gdh = "git diff HEAD";
-        gp = "git push";
-        gph = "git push -u origin HEAD";
-        gco = "git checkout";
-        gcob = "git checkout -b";
-        gcm = "git checkout master";
-        gcd = "git checkout develop";
 
         pbcopy = "/mnt/c/Windows/System32/clip.exe";
         pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";
