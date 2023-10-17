@@ -44,6 +44,7 @@ let
     zip
 
     # postman # https://github.com/NixOS/nixpkgs/issues/259147
+    _1password-gui
   ];
 
   stable-packages = with pkgs; [

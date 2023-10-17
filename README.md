@@ -37,6 +37,9 @@ exit # (nix shell)
 exit # (wsl)
 wsl -t NixOS
 wsl -d NixOS
+
+# verify docker works
+docker run hello-world
 ```
 
 ## Mount existing .ssh folder from Windows
