@@ -28,6 +28,7 @@ let
     htop
     jq
     just
+    keepassxc
     killall
     nerdfonts
     nodejs_18
@@ -125,7 +126,9 @@ in
     nix-index.enableZshIntegration = true;
     nix-index-database.comma.enable = true;
 
-    # TODO: unklar ?!
+    # see
+    # https://determinate.systems/posts/nix-home-env
+    # https://determinate.systems/posts/nix-direnv
     direnv.enable = true;
     direnv.enableZshIntegration = true;
     direnv.nix-direnv.enable = true;
