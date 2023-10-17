@@ -10,6 +10,7 @@ let
   java = import ./modules/java;
   broot = import ./modules/broot;
   zsh = import ./modules/zsh;
+  intellij = import ./modules/intellij;
 
   unstable-packages = with pkgs.unstable; [
     # FIXME: select your core binaries that you always want on the bleeding-edge
@@ -83,6 +84,7 @@ in
     java
     broot
     zsh
+    intellij
   ];
 
   home.stateVersion = "22.11";

@@ -109,8 +109,8 @@ code .
 
 # TODO
 
-- intelliJ ultimate
-- structure to include nix-darwin config (by hostname)
-- not working: graalvm, google-chrome, postman (flatpak?)
 - readme remote flake
 - document shortcuts
+- Alacritty ?
+- structure to include nix-darwin config (by hostname)
+- not working: graalvm, google-chrome, postman (flatpak?)

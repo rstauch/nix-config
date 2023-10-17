@@ -1,4 +1,7 @@
-copy .envrc and shell.nix in target directory
-run 'direnv allow' in target directory to enable dir specifc env
+## How to use direnv
 
-run 'direnv deny' in target directory to disable dir specifc env
+First copy _.envrc_ and _shell.nix_ in target directory
+
+`direnv allow` in target directory to enable dir specifc env
+
+`direnv deny` in target directory to disable dir specifc env
