@@ -31,6 +31,7 @@ in
   # alternativ: cd ** + TAB bzw cat ** + TAB um fuzzy search zu öffnen
   # enter subdir = ALT+C
   programs.fzf = {
+    package = pkgs.unstable.fzf;
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
@@ -44,6 +45,7 @@ in
   # cdi bla / = search from root dir
   programs.zoxide = {
     enable = true;
+    package = pkgs.unstable.zoxide;
     enableBashIntegration = true;
     enableFishIntegration = true;
     enableZshIntegration = true;
@@ -143,6 +145,8 @@ in
       j = "just";
 
       hmu = "cd ${config.home.homeDirectory}/projects/int/nix-config && sudo nixos-rebuild switch --flake .#nixos && gc && refresh";
+      hmur = "sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos && gc && refresh";
+
       hme = "dot";
       dot = "${pkgs.lib.getExe vscode} ${config.home.homeDirectory}/projects/int/nix-config";
 

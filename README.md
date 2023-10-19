@@ -42,6 +42,18 @@ wsl -d NixOS
 docker run hello-world
 ```
 
+## Create Windows shortcuts
+
+Only needs to be performed once:
+
+```
+# bash
+C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
+
+# zsh
+C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~" -e bash -lc zsh
+```
+
 ## Mount existing .ssh folder from Windows
 
 Only needs to be performed once:
@@ -55,16 +67,6 @@ ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~
 
 # test connection
 ssh -T git@github.com
-```
-
-## Create Windows shortcuts
-
-```
-# bash
-C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
-
-# zsh
-C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~" -e bash -lc zsh
 ```
 
 ## Setup VcXsrv on Windows
@@ -83,6 +85,22 @@ Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xla
 **Note**: Windows Firewall rules might need to be created (**Inbound Rules**) for _VcXsrv_.<BR/>
 **Note**: Pot. use https://community.chocolatey.org/packages/vcxsrv#files (includes Firewall Rules).<BR/>
 **Note**: Pot. add shortcut to Windows autostart.
+
+# Install from Remote Flake
+
+```
+sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos
+
+# pot. open up new shell:
+wsl -t NixOS
+wsl -d NixOS
+
+# cleanup
+gc && refresh
+
+# afterwards apply (remote) updates with:
+hmur
+```
 
 # Development
 
@@ -105,15 +123,16 @@ Edit with VSCode:
 ```
 cd ~/projects/int/nix-config
 code .
+
+# or run:
+hme
 ```
 
 # TODO
 
-- mac configs
-- starship ?
-- readme remote flake
-- document shortcuts
+- starship prompt?
 - Windows Terminal
+- document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
 - not working: graalvm, google-chrome, postman (flatpak?)
