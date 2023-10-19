@@ -8,6 +8,7 @@ let
   eza = pkgs.unstable.eza;
   lesspipe = pkgs.unstable.lesspipe;
   less = pkgs.unstable.less;
+  vscode = pkgs.unstable.vscode;
 in
 {
   home.sessionVariables = {
@@ -142,7 +143,8 @@ in
       j = "just";
 
       hmu = "cd ${config.home.homeDirectory}/projects/int/nix-config && sudo nixos-rebuild switch --flake .#nixos && gc && refresh";
-      dot = "${pkgs.lib.getExe pkgs.vscode} ${config.home.homeDirectory}/projects/int/nix-config";
+      hme = "dot";
+      dot = "${pkgs.lib.getExe vscode} ${config.home.homeDirectory}/projects/int/nix-config";
 
       pbcopy = "/mnt/c/Windows/System32/clip.exe";
       pbpaste = "/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -command 'Get-Clipboard'";

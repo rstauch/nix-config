@@ -109,8 +109,11 @@ code .
 
 # TODO
 
+- mac configs
+- starship ?
 - readme remote flake
 - document shortcuts
-- Alacritty ?
+- Windows Terminal
 - structure to include nix-darwin config (by hostname)
+- github actions pipeline
 - not working: graalvm, google-chrome, postman (flatpak?)
