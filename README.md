@@ -16,31 +16,12 @@ wsl -d NixOS
 sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
-# provide git
-nix-shell -p git
-
-# clone repo
-mkdir -p ~/projects/int
-cd ~/projects/int
-git clone https://github.com/rstauch/nix-config.git
-
-# avoid issues by creating a vscode settings files
+# avoid issues by creating a vscode settings file first
 mkdir -p /home/nixos/.config/Code/User
 touch /home/nixos/.config/Code/User/settings.json
-
-# apply updates
-cd ~/projects/int/nix-config
-sudo nixos-rebuild switch --flake .#nixos
-
-# reconnect to WSL shell
-exit # (nix shell)
-exit # (wsl)
-wsl -t NixOS
-wsl -d NixOS
-
-# verify docker works
-docker run hello-world
 ```
+
+See section [Development](#Development) or [Install from Remote Flake](#Install-from-Remote-Flake) for next steps
 
 ## Create Windows shortcuts
 
@@ -84,9 +65,11 @@ Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xla
 
 **Note**: Windows Firewall rules might need to be created (**Inbound Rules**) for _VcXsrv_.<BR/>
 **Note**: Pot. use https://community.chocolatey.org/packages/vcxsrv#files (includes Firewall Rules).<BR/>
-**Note**: Pot. add shortcut to Windows autostart.
+**Note**: add shortcut to Windows autostart.
 
 # Install from Remote Flake
+
+Apply this configuration without cloning the repo:
 
 ```
 sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos
@@ -104,9 +87,18 @@ hmur
 
 # Development
 
-Switch repo _https_ remote to _ssh_:
-
 ```
+
+# Switch repo _https_ remote to _ssh_:
+
+# provide git (if required)
+# nix-shell -p git
+
+# clone repo
+mkdir -p ~/projects/int
+cd ~/projects/int
+git clone https://github.com/rstauch/nix-config.git
+
 cd ~/projects/int/nix-config
 # current remote config
 git remote -v
@@ -116,6 +108,20 @@ git remote set-url origin git@github.com:rstauch/nix-config.git
 
 # verify results
 git remote -v
+
+# avoid issues by creating a vscode settings file (if required)
+mkdir -p /home/nixos/.config/Code/User
+touch /home/nixos/.config/Code/User/settings.json
+
+# apply updates
+cd ~/projects/int/nix-config
+sudo nixos-rebuild switch --flake .#nixos
+
+# reconnect to WSL shell
+exit # (nix shell)
+exit # (wsl)
+wsl -t NixOS
+wsl -d NixOS
 ```
 
 Edit with VSCode:
@@ -126,6 +132,16 @@ code .
 
 # or run:
 hme
+```
+
+Apply changes:
+
+```
+cd ~/projects/int/nix-config
+sudo nixos-rebuild switch --flake .#nixos
+
+# or run:
+hmu
 ```
 
 # TODO
