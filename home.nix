@@ -53,6 +53,8 @@ let
   ];
 
   stable-packages = with pkgs; [
+    postman
+
     # FIXME: customize these stable packages to your liking for the languages that you use
     # language servers
     nodePackages.typescript-language-server

@@ -23,16 +23,16 @@ touch ~/.config/Code/User/settings.json
 
 See section [Development](#Development) or [Install from Remote Flake](#Install-from-Remote-Flake) for next steps
 
-## Create Windows shortcuts
+## Create Windows shortcuts to WSL distribution
 
 Only needs to be performed once:
 
 ```
-# bash
-C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
-
 # zsh
 C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~" -e bash -lc zsh
+
+# bash
+C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
 ```
 
 ## Mount existing .ssh folder from Windows
@@ -152,4 +152,4 @@ hmu
 - document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
-- not working: graalvm, postman (flatpak?)
+- not working: graalvm
