@@ -17,8 +17,8 @@ sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
 # avoid issues by creating a vscode settings file first
-mkdir -p /home/nixos/.config/Code/User
-touch /home/nixos/.config/Code/User/settings.json
+mkdir -p ~/.config/Code/User
+touch ~/.config/Code/User/settings.json
 ```
 
 See section [Development](#Development) or [Install from Remote Flake](#Install-from-Remote-Flake) for next steps
@@ -110,8 +110,8 @@ git remote set-url origin git@github.com:rstauch/nix-config.git
 git remote -v
 
 # avoid issues by creating a vscode settings file (if required)
-mkdir -p /home/nixos/.config/Code/User
-touch /home/nixos/.config/Code/User/settings.json
+mkdir -p ~/.config/Code/User
+touch ~/.config/Code/User/settings.json
 
 # apply updates
 cd ~/projects/int/nix-config

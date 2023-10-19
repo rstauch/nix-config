@@ -14,11 +14,11 @@ let
   maven = pkgs.unstable.maven.override { inherit jdk; };
 in
 {
-  home.packages = with pkgs; [
+  home.packages = [
     maven
     gradle
-    # graalvm
     jdk
+    # graalvm
   ];
 
   home.sessionVariables = {

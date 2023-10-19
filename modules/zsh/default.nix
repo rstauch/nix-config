@@ -144,7 +144,7 @@ in
       br = "br --cmd ':open_preview'";
       j = "just";
 
-      hmu = "cd ${config.home.homeDirectory}/projects/int/nix-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos && gc && refresh";
+      hmu = "sudo nix-channel --update && cd ${config.home.homeDirectory}/projects/int/nix-config && nix flake update && sudo nixos-rebuild switch --flake .#nixos && gc && refresh";
       hmur = "sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos && gc && refresh";
 
       hme = "dot";
