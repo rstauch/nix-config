@@ -115,9 +115,10 @@ touch /home/nixos/.config/Code/User/settings.json
 
 # apply updates
 cd ~/projects/int/nix-config
+nix flake update
 sudo nixos-rebuild switch --flake .#nixos
 
-# reconnect to WSL shell
+# reconnect to WSL shell (if required)
 exit # (nix shell)
 exit # (wsl)
 wsl -t NixOS
