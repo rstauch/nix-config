@@ -7,6 +7,7 @@
 let
   vscode = import ./modules/vscode;
   firefox = import ./modules/firefox;
+  chrome = import ./modules/chrome;
   java = import ./modules/java;
   broot = import ./modules/broot;
   zsh = import ./modules/zsh;
@@ -82,6 +83,7 @@ in
     nix-index-database.hmModules.nix-index
     vscode
     firefox
+    chrome
     java
     broot
     zsh

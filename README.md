@@ -152,4 +152,4 @@ hmu
 - document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
-- not working: graalvm, google-chrome, postman (flatpak?)
+- not working: graalvm, postman (flatpak?)
