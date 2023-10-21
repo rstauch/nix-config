@@ -17,8 +17,8 @@ sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
 # avoid issues by creating a vscode settings file first
-mkdir -p ~/.config/Code/User
-touch ~/.config/Code/User/settings.json
+# mkdir -p ~/.config/Code/User
+# touch ~/.config/Code/User/settings.json
 ```
 
 See section [Development](#Development) or [Install from Remote Flake](#Install-from-Remote-Flake) for next steps
@@ -28,11 +28,7 @@ See section [Development](#Development) or [Install from Remote Flake](#Install-
 Only needs to be performed once:
 
 ```
-# zsh
-C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~" -e bash -lc zsh
-
-# bash
-C:\Windows\System32\wsl.exe --distribution NixOS -u nixos --cd "~"
+C:\Windows\System32\wsl.exe --distribution NixOs --cd "~"
 ```
 
 ## Mount existing .ssh folder from Windows
@@ -44,7 +40,9 @@ WINDOWS_USER=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe '$e
 echo $WINDOWS_USER
 ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~
 # if required:
-# chmod 600 ~/.ssh/id_rsa
+# sudo chown nixos:users ~/.ssh
+# sudo chmod 700 ~/.ssh/
+# sudo chmod 600 ~/.ssh/id_rsa
 
 # test connection
 ssh -T git@github.com
@@ -75,7 +73,10 @@ Apply this configuration without cloning the repo:
 sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos
 
 # pot. open up new shell:
+exit # from wsl
 wsl -t NixOS
+
+# or use previously created shortcut
 wsl -d NixOS
 
 # cleanup
@@ -88,8 +89,6 @@ hmur
 # Development
 
 ```
-
-# Switch repo _https_ remote to _ssh_:
 
 # provide git (if required)
 # nix-shell -p git
@@ -147,12 +146,14 @@ hmu
 
 # TODO
 
+- attribute video/repo: https://github.com/LGUG2Z/nixos-wsl-starter
 - starship prompt?
 - Windows Terminal
 - document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
-- not working: graalvm
+- remove vscode initial manual step
+- dotfiles ?
 - Android Studio? mitm (Charles?), frida, objection, genymotion
 
 ## Android
