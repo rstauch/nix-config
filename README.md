@@ -153,3 +153,14 @@ hmu
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
 - not working: graalvm
+- Android Studio? mitm (Charles?), frida, objection, genymotion
+
+## Android
+
+- evtl via WSA? (Zugriff aus WSL?)
+- androidStudioPackages.dev
+- frida-tools
+- android-tools
+- genymotion ?
+- charles? mitmproxy? burpsuite?
+- python311Packages.pip? für pip3 install objection ?

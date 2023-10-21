@@ -1,18 +1,23 @@
 { pkgs ? import <nixpkgs> { } }:
 let
-  jdk = pkgs.jdk17;
+  jdk = pkgs.jdk11;
 
   # point gradle to the jdk
   gradle = pkgs.gradle.override {
     java = jdk;
   };
+
+  maven = pkgs.maven.override { inherit jdk; };
 in
 pkgs.mkShell {
   buildInputs = [
-    jdk
     gradle
+    maven
+    jdk
   ];
-  shellHook = ''
-    export JAVA_HOME="${jdk}/lib/openjdk"
-  '';
 }
+
+# java --version
+# mvn --version
+# gradle --version
+# env | grep -i java
