@@ -1,3 +1,5 @@
+# currently (21.10.2023) resolves to graalvm-ce-21.0.0
+
 let
   unstable = import (fetchTarball "https://nixos.org/channels/nixos-unstable/nixexprs.tar.xz") { };
   graalvm = unstable.graalvm-ce;
@@ -20,3 +22,4 @@ with nixpkgs; mkShell {
 # mvn --version
 # gradle --version
 # env | grep -i java
+# env | grep -i GRAALVM_HOME
