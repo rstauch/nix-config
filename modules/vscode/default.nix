@@ -23,6 +23,9 @@ let
     redhat.vscode-yaml
     stkb.rewrap
     tamasfe.even-better-toml
+    mhutchie.git-graph
+    redhat.vscode-xml
+    skellock.just
   ];
 in
 {

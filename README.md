@@ -16,7 +16,7 @@ wsl -d NixOS
 sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
-# avoid issues by creating a vscode settings file first
+# avoid issues by creating a vscode settings file first:
 # mkdir -p ~/.config/Code/User
 # touch ~/.config/Code/User/settings.json
 ```
@@ -24,8 +24,6 @@ sudo nix-channel --update
 See section [Development](#Development) or [Install from Remote Flake](#Install-from-Remote-Flake) for next steps
 
 ## Create Windows shortcuts to WSL distribution
-
-Only needs to be performed once:
 
 ```
 C:\Windows\System32\wsl.exe --distribution NixOs --cd "~"
@@ -147,6 +145,7 @@ hmu
 # TODO
 
 - attribute video/repo: https://github.com/LGUG2Z/nixos-wsl-starter
+- vscode copilot plugin
 - starship prompt?
 - Windows Terminal
 - document shortcuts
