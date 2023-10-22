@@ -36,6 +36,7 @@ let
     nerdfonts
     nodejs_18
     openssl
+    p7zip
     procs
     q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
     ripgrep
