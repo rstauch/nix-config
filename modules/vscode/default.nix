@@ -26,6 +26,7 @@ let
     mhutchie.git-graph
     redhat.vscode-xml
     skellock.just
+  ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
   ];
 in
 {
