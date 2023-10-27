@@ -1,5 +1,7 @@
 # Setup WSL Distro
 
+The structure of this repo is based on: https://github.com/LGUG2Z/nixos-wsl-starter
+
 Download _nixos-wsl.tar.gz_ from: https://github.com/nix-community/NixOS-WSL/releases (tested with version _23.5.5.2_).
 
 ```
@@ -65,7 +67,7 @@ Create shortcut: `"C:\Program Files\VcXsrv\xlaunch.exe" -run "C:\code\config.xla
 
 # Install from Remote Flake
 
-Apply this configuration without cloning the repo:
+Apply this configuration without needing to clone this repo:
 
 ```
 sudo nixos-rebuild switch --flake github:rstauch/nix-config#nixos
@@ -144,8 +146,6 @@ hmu
 
 # TODO
 
-- attribute video/repo: https://github.com/LGUG2Z/nixos-wsl-starter
-- vscode copilot plugin
 - starship prompt?
 - Windows Terminal
 - document shortcuts
@@ -153,14 +153,5 @@ hmu
 - github actions pipeline
 - remove vscode initial manual step
 - dotfiles ?
-- Android Studio? mitm (Charles?), frida, objection, genymotion
-
-## Android
-
-- evtl via WSA? (Zugriff aus WSL?)
-- androidStudioPackages.dev
-- frida-tools
-- android-tools
-- genymotion ?
-- charles? mitmproxy? burpsuite?
-- python311Packages.pip? für pip3 install objection ?
+- vscode copilot plugin
+- nicht funktionierende vscode plugins
