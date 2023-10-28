@@ -155,3 +155,5 @@ hmu
 - dotfiles ?
 - vscode copilot plugin
 - nicht funktionierende vscode plugins
+  (s. evtl. https://github.com/orgs/community/discussions/33392#discussioncomment-3696373)
+  - hancel.markdown-image
