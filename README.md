@@ -144,6 +144,17 @@ sudo nixos-rebuild switch --flake .#nixos
 hmu
 ```
 
+# WSL Backup & Restore
+
+```
+# wsl --export <Image Name> <Export location file name.tar>
+wsl --export NixOs P:\Backup\WSL\NixOs.tar
+
+# restore
+# wsl --import <Image Name> <Directory where you want to store the imported image> <Directory where the exported .tar file exists>
+wsl --import NixOs D:\code\wsl\NixOs P:\Backup\WSL\NixOs.tar
+```
+
 # TODO
 
 - starship prompt?
@@ -153,7 +164,6 @@ hmu
 - github actions pipeline
 - remove vscode initial manual step
 - dotfiles ?
-- vscode copilot plugin
 - nicht funktionierende vscode plugins
   (s. evtl. https://github.com/orgs/community/discussions/33392#discussioncomment-3696373)
   - hancel.markdown-image

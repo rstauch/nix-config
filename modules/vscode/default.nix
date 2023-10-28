@@ -27,6 +27,13 @@ let
     redhat.vscode-xml
     skellock.just
   ] ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+    # https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+    {
+      name = "copilot";
+      publisher = "GitHub";
+      version = "1.130.518";
+      sha256 = "sha256-kHUk9Ap90MAZVyp+avhrgKE8luE+5NekVGZfSwDyzXU=";
+    }
   ];
 in
 {
