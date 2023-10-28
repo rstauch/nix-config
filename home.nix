@@ -25,7 +25,6 @@ let
     fd
     findutils
     fx # terminal json viewer
-    git
     git-crypt
     gron # Make JSON greppable, https://github.com/tomnomnom/gron
     htop
@@ -155,6 +154,13 @@ in
       userEmail = "robert.stauch@fluxdev.de";
       userName = "Robert Stauch";
       extraConfig = {
+        core = {
+          autocrlf = "input";
+          safecrlf = true;
+        };
+        init = {
+          defaultBranch = "master";
+        };
         push = {
           default = "current";
           autoSetupRemote = true;
