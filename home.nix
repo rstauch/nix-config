@@ -15,7 +15,6 @@ let
   db = import ./modules/db;
 
   unstable-packages = with pkgs.unstable; [
-    # FIXME: select your core binaries that you always want on the bleeding-edge
     bat
     bottom
     coreutils
@@ -48,14 +47,12 @@ let
     yarn
     zip
 
-    # postman # https://github.com/NixOS/nixpkgs/issues/259147
     _1password-gui
   ];
 
   stable-packages = with pkgs; [
     postman
 
-    # FIXME: customize these stable packages to your liking for the languages that you use
     # language servers
     nodePackages.typescript-language-server
     pkgs.nodePackages.vscode-langservers-extracted # html, css, json, eslint
@@ -125,8 +122,6 @@ in
       # pkgs.unstable.some-other-package
     ];
 
-  # FIXME: if you want to version your LunarVim config, add it to the root of this repo and uncomment the next line
-  # home.file.".config/lvim/config.lua".source = ./lvim_config.lua;
 
   programs = {
     home-manager.enable = true;
