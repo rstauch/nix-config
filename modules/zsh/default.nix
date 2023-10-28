@@ -83,6 +83,8 @@ in
       zstyle ':fzf-tab:complete:(bat|cat|less):*' fzf-preview '${pkgs.lib.getExe bat} --color=always --style=numbers --line-range=:1000 $realpath'
 
       eval "$(direnv hook zsh)"
+      eval "$(thefuck --alias)"
+
 
       # from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker#settings
       zstyle ':completion:*:*:docker:*' option-stacking yes
@@ -200,28 +202,33 @@ in
       enable = true;
       # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins
       plugins = [
-        "git"
+        "adb" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/adb
+        "gradle" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/gradle
+        "npm" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/npm
+        "vscode" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
+        "command-not-found" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
+        "magic-enter" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/magic-enter
+        "per-directory-history" # CTRL+G https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/per-directory-history
+        "git" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 
-        "sudo" # press esc twice.
+        "thefuck" # press esc twice https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck
+        #"sudo" # press esc twice.
 
         # alt + left = previous dir
         # alt + right = undo
         # alt + up = parent dir
         # alt + down = first child dir
-        "dirhistory"
+        "dirhistory" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/dirhistory
 
-        "colored-man-pages"
+        "colored-man-pages" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/colored-man-pages
 
         "zoxide"
-        "mvn"
+        "mvn" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/mvn
         # 1password
-        # adb
         # aws
         # gcloud
-        "docker"
+        "docker" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker
         # "docker-compose"
-        # gitflow ?
-        # fzf ?
 
         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/helm
         # "helm"

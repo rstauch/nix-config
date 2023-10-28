@@ -5,6 +5,8 @@
 }: {
   networking.hostName = "${hostname}";
 
+  programs.thefuck.enable = true;
+
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
   environment.shells = [ pkgs.zsh ];
