@@ -1,6 +1,6 @@
 # Setup WSL Distro
 
-The structure of this repo is based on: https://github.com/LGUG2Z/nixos-wsl-starter
+The structure of this repo is based on: https://github.com/LGUG2Z/NixOS-wsl-starter
 
 Download _nixos-wsl.tar.gz_ from: https://github.com/nix-community/NixOS-WSL/releases (tested with version _23.5.5.2_).
 
@@ -8,13 +8,13 @@ Download _nixos-wsl.tar.gz_ from: https://github.com/nix-community/NixOS-WSL/rel
 # remove existing WSL distro if required
 # wsl --unregister NixOS
 
-# import downloaded NixOs-WSL distro
+# import downloaded NixOS-WSL distro
 wsl --import NixOS D:\code\wsl\NixOS\ D:\code\wsl\nixos-wsl.tar.gz --version 2
 
 # start distro
 wsl -d NixOS
 
-# setup nixos 23.05 channel
+# setup NixOS 23.05 channel
 sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
 sudo nix-channel --update
 
@@ -28,7 +28,7 @@ See section [Development](#Development) or [Install from Remote Flake](#Install-
 ## Create Windows shortcuts to WSL distribution
 
 ```
-C:\Windows\System32\wsl.exe --distribution NixOs --cd "~"
+C:\Windows\System32\wsl.exe --distribution NixOS --cd "~"
 ```
 
 ## Mount existing .ssh folder from Windows
@@ -148,11 +148,11 @@ hmu
 
 ```
 # wsl --export <Image Name> <Export location file name.tar>
-wsl --export NixOs P:\Backup\WSL\NixOs.tar
+wsl --export NixOS P:\Backup\WSL\NixOS.tar
 
 # restore
 # wsl --import <Image Name> <Directory where you want to store the imported image> <Directory where the exported .tar file exists>
-wsl --import NixOs D:\code\wsl\NixOs P:\Backup\WSL\NixOs.tar
+wsl --import NixOS D:\code\wsl\NixOS P:\Backup\WSL\NixOS.tar
 ```
 
 # TODO
