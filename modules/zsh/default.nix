@@ -9,6 +9,7 @@ let
   lesspipe = pkgs.unstable.lesspipe;
   less = pkgs.unstable.less;
   vscode = pkgs.unstable.vscode;
+  any-nix-shell = pkgs.unstable.any-nix-shell;
 in
 {
   home.sessionVariables = {
@@ -24,6 +25,9 @@ in
     # fzf preview
     lesspipe
     less
+
+    # other
+    any-nix-shell
   ];
 
   # history = CTRL + R
@@ -84,6 +88,8 @@ in
 
       eval "$(direnv hook zsh)"
       eval "$(thefuck --alias)"
+
+      any-nix-shell zsh --info-right | source /dev/stdin
 
 
       # from: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/docker#settings
