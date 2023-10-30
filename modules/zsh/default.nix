@@ -163,7 +163,7 @@ in
       explorer = "/mnt/c/Windows/explorer.exe";
 
       idea = "idea-ultimate"; # blocks terminal
-      ff = "firefox &";
+      ff = "firefox";
     };
     history = {
       save = 10000;

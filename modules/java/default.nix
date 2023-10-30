@@ -1,36 +1,36 @@
 { pkgs, ... }:
 let
-  jdkVersion = "17";
+  jdk17 = pkgs.unstable."jdk17";
 
-  jdk = pkgs.unstable."jdk${jdkVersion}";
+  # install jdk21 in order to provide it to IntelliJ (if required)
+  jdk21 = pkgs.unstable."jdk21".overrideAttrs (oldAttrs: {
+    meta.priority = 10;
+  });
 
   gradle = pkgs.unstable.gradle.override {
-    java = jdk;
+    java = jdk17;
   };
 
-  # clashes with jdk17 ?
-  # graalvm = pkgs."graalvm${jdkVersion}-ce";
-
-  maven = pkgs.unstable.maven.override { inherit jdk; };
+  maven = pkgs.unstable.maven.override { jdk = jdk17; };
 in
 {
   home.packages = [
     maven
     gradle
-    jdk
-    # graalvm
+    jdk17
+    jdk21
   ];
 
   home.sessionVariables = {
-    JAVA_HOME = "${jdk}/lib/openjdk";
-    # GRAALVM_HOME = "${graalvm}";
+    JAVA_HOME = "${jdk17}/lib/openjdk";
   };
 
+  home.file."jdks/jdk17".source = jdk17;
+  home.file."jdks/jdk21".source = jdk21;
 }
 
 # check with:
-# java --version # contains GRAALVM info
-# mvn --version
-# gradle --version
-# env | grep -i java
-# env | grep -i graal
+# java --version # should return java17
+# mvn --version # should return java17
+# gradle --version # should return java17
+# env | grep -i java  # should return java17
