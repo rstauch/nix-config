@@ -155,10 +155,23 @@ wsl --export NixOS P:\Backup\WSL\NixOS.tar
 wsl --import NixOS D:\code\wsl\NixOS P:\Backup\WSL\NixOS.tar
 ```
 
+# Windows Terminal Setup (wip)
+
+## Font settings
+
+Basis: [link](https://github.com/LGUG2Z/nixos-wsl-starter/issues/2)<BR>
+Install all JetBrainsMono NerdFont files in Windows by _Right Clicking and selecting Install Fonts_<BR>
+Set the following appeareance Settings in Windows Terminal:
+![Font settings](images/win_terminal_fonts.png)<BR>
+<BR>
+
+---
+
+```
 # TODO
 
-- starship prompt?
-- Windows Terminal
+- starship prompt ?
+- Windows Terminal (https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup#customize-your-powershell-prompt-with-oh-my-posh)
 - document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
@@ -167,3 +180,4 @@ wsl --import NixOS D:\code\wsl\NixOS P:\Backup\WSL\NixOS.tar
 - nicht funktionierende vscode plugins
   (s. evtl. https://github.com/orgs/community/discussions/33392#discussioncomment-3696373)
   - hancel.markdown-image
+```

@@ -214,7 +214,7 @@ in
         "vscode" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vscode
         "command-not-found" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/command-not-found
         "magic-enter" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/magic-enter
-        "per-directory-history" # CTRL+G https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/per-directory-history
+        "per-directory-history" # CTRL+G für global history https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/per-directory-history
         "git" # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 
         "thefuck" # press esc twice https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck
