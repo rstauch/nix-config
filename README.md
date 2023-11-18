@@ -165,13 +165,58 @@ Set the following appeareance Settings in Windows Terminal:
 ![Font settings](images/win_terminal_fonts.png)<BR>
 <BR>
 
----
+### Oh-My-Posh
+
+Basis:
+
+- [YouTube](https://www.youtube.com/watch?v=-G6GbXGo4wo&ab_channel=TroubleChute)<BR>
+- [Docs](https://ohmyposh.dev/docs/installation/windows)<BR>
+- [Tut](https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup#customize-your-powershell-prompt-with-oh-my-posh)<BR>
+
+Powershell:
 
 ```
+# upgrade powershell
+winget install --id Microsoft.Powershell --source winget
+
+winget install JanDeDobbeleer.OhMyPosh -s winget
+# apply updates (if required)
+winget upgrade JanDeDobbeleer.OhMyPosh -s winget
+
+## restart terminal
+
+# generate install default theme command
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\jandedobbeleer.omp.json"
+## copy output and run in terminal:
+# (@(& 'C:/Users/tresb/AppData/Local/Programs/oh-my-posh/bin/oh-my-posh.exe' init pwsh --config='C:\Users\tresb\AppData\Local\Programs\oh-my-posh\themes\jandedobbeleer.omp.json' --print) -join "`n") | Invoke-Expression
+```
+
+check themes at: https://ohmyposh.dev/docs/themes or via `Get-PoshThemes`
+
+```
+Install-Module PSReadLine -Force
+Install-Module -Name Terminal-Icons -Repository PSGallery -Force
+
+New-Item -Path $PROFILE -Type File -Force
+notepad $PROFILE
+
+# add the following lines:
+oh-my-posh init pwsh --config 'C:\Users\tresb\AppData\Local\Programs\oh-my-posh\themes\fish.omp.json' | Invoke-Expression
+Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -PredictionViewStyle ListView
+Set-PSReadLineOption -BellStyle None
+Set-PSReadLineOption -MaximumHistoryCount 10000
+
+. $PROFILE
+
+# restart Windows Terminal
+```
+
+---
+
 # TODO
 
 - starship prompt ?
-- Windows Terminal (https://learn.microsoft.com/en-us/windows/terminal/tutorials/custom-prompt-setup#customize-your-powershell-prompt-with-oh-my-posh)
 - document shortcuts
 - structure to include nix-darwin config (by hostname)
 - github actions pipeline
@@ -180,4 +225,7 @@ Set the following appeareance Settings in Windows Terminal:
 - nicht funktionierende vscode plugins
   (s. evtl. https://github.com/orgs/community/discussions/33392#discussioncomment-3696373)
   - hancel.markdown-image
+
+```
+
 ```
