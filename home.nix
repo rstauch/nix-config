@@ -27,10 +27,12 @@ let
     git-crypt
     gron # Make JSON greppable, https://github.com/tomnomnom/gron
     htop
+    httpie
     jq
     just
     keepassxc
     killall
+    lazydocker
     nerdfonts
     nodejs_18
     openssl
