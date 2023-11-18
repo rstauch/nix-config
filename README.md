@@ -157,6 +157,33 @@ wsl --import NixOS D:\code\wsl\NixOS P:\Backup\WSL\NixOS.tar
 
 # Windows Terminal Setup (wip)
 
+## Shortcuts
+
+add the following to the Windows Terminal _settings.json_ file:
+
+- horizontal split = _ctrl+shift+minus_
+- vertical split = _ctrl+shift+plus_
+- close pane = _ctrl+shift+w_
+
+```json
+{
+  "command": {
+    "action": "splitPane",
+    "split": "down",
+    "splitMode": "duplicate"
+  },
+  "keys": "ctrl+shift+minus"
+},
+{
+  "command": {
+    "action": "splitPane",
+    "split": "vertical",
+    "splitMode": "duplicate"
+  },
+  "keys": "ctrl+shift+plus"
+}
+```
+
 ## Font settings
 
 Basis: [link](https://github.com/LGUG2Z/nixos-wsl-starter/issues/2)<BR>
