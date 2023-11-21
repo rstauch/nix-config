@@ -33,6 +33,7 @@ let
     keepassxc
     killall
     lazydocker
+    mc
     nerdfonts
     nodejs_18
     openssl
