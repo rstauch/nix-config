@@ -95,6 +95,14 @@ in
 
   home.stateVersion = "22.11";
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    x11.enable = true;
+    name = "phinger-cursors";
+    package = pkgs.phinger-cursors;
+    size = 16;
+  };
+
   home = {
     username = "${username}";
     homeDirectory = "/home/${username}";
