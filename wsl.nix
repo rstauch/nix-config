@@ -3,6 +3,9 @@
 , pkgs
 , ...
 }: {
+  time.timeZone = "UTC";
+
+
   networking.hostName = "${hostname}";
 
   programs.thefuck.enable = true;

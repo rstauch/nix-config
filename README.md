@@ -14,8 +14,8 @@ wsl --import NixOS D:\code\wsl\NixOS\ D:\code\wsl\nixos-wsl.tar.gz --version 2
 # start distro
 wsl -d NixOS
 
-# setup NixOS 23.05 channel
-sudo nix-channel --add https://nixos.org/channels/nixos-23.05 nixos
+# setup NixOS 23.11 channel
+sudo nix-channel --add https://nixos.org/channels/nixos-23.11 nixos
 sudo nix-channel --update
 
 # avoid issues by creating a vscode settings file first:

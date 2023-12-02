@@ -38,6 +38,7 @@ let
     nodejs_18
     openssl
     p7zip
+    # postman
     procs
     q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
     ripgrep
@@ -54,8 +55,6 @@ let
   ];
 
   stable-packages = with pkgs; [
-    postman
-
     # language servers
     nodePackages.typescript-language-server
     pkgs.nodePackages.vscode-langservers-extracted # html, css, json, eslint
