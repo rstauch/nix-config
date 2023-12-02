@@ -17,6 +17,7 @@ let
   unstable-packages = with pkgs.unstable; [
     bat
     bottom
+    bruno # offline only postman replacement
     coreutils
     curl
     dos2unix
@@ -28,6 +29,7 @@ let
     gron # Make JSON greppable, https://github.com/tomnomnom/gron
     htop
     httpie
+    insomnia # postman alternative
     jq
     just
     keepassxc
@@ -38,7 +40,7 @@ let
     nodejs_18
     openssl
     p7zip
-    # postman
+    # postman # currently 404
     procs
     q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
     ripgrep
