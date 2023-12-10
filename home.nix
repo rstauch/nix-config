@@ -35,6 +35,7 @@ let
     keepassxc
     killall
     lazydocker
+    microsoft-edge
     mc
     nerdfonts
     nodejs_18
