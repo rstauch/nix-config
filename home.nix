@@ -143,6 +143,14 @@ in
     ];
 
 
+  services.gpg-agent = {
+    enable = true;
+    enableSshSupport = true;
+    pinentryFlavor = "tty";
+    defaultCacheTtl = 31536000;
+    maxCacheTtl = 31536000;
+  };
+
   programs = {
     home-manager.enable = true;
     nix-index.enable = true;
@@ -169,6 +177,7 @@ in
       userName = "Robert Stauch";
       extraConfig = {
         credential.credentialStore = "gpg";
+        #credential.credentialStore = "plaintext";
         credential.helper = "${pkgs.unstable.git-credential-manager}/bin/git-credential-manager";
         credential.useHttpPath = true;
         core = {
