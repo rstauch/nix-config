@@ -84,6 +84,9 @@ let
     nixpkgs-review
     sqlfluff
     tflint
+
+    gnupg
+    pass
   ];
 in
 {
@@ -153,10 +156,9 @@ in
     direnv.enableZshIntegration = true;
     direnv.nix-direnv.enable = true;
 
-
     git = {
       enable = true;
-      package = pkgs.unstable.git;
+      package = pkgs.gitFull;
       delta.enable = true;
       delta.options = {
         line-numbers = true;
@@ -166,6 +168,9 @@ in
       userEmail = "robert.stauch@fluxdev.de";
       userName = "Robert Stauch";
       extraConfig = {
+        credential.credentialStore = "gpg";
+        credential.helper = "${pkgs.unstable.git-credential-manager}/bin/git-credential-manager";
+        credential.useHttpPath = true;
         core = {
           autocrlf = "input";
           safecrlf = true;
