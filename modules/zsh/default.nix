@@ -164,6 +164,7 @@ in
 
       idea = "idea-ultimate"; # blocks terminal
       ff = "firefox";
+      edge = "microsoft-edge-stable";
     };
     history = {
       save = 10000;

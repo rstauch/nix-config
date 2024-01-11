@@ -15,9 +15,11 @@ let
   db = import ./modules/db;
 
   unstable-packages = with pkgs.unstable; [
+    azure-cli
     bat
     bottom
     bruno # offline only postman replacement
+    camunda-modeler
     coreutils
     curl
     dos2unix
@@ -26,6 +28,7 @@ let
     findutils
     fx # terminal json viewer
     git-crypt
+    git-credential-manager
     gron # Make JSON greppable, https://github.com/tomnomnom/gron
     htop
     httpie
@@ -45,6 +48,7 @@ let
     procs
     q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
     ripgrep
+    terraform
     tldr
     tree
     unzip
