@@ -177,9 +177,9 @@ in
       userName = "Robert Stauch";
       extraConfig = {
         credential.credentialStore = "gpg";
-        #credential.credentialStore = "plaintext";
         credential.helper = "${pkgs.unstable.git-credential-manager}/bin/git-credential-manager";
         credential.useHttpPath = true;
+        credential.cacheOptions = "--timeout 86400";
         core = {
           autocrlf = "input";
           safecrlf = true;

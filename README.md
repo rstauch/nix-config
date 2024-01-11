@@ -48,6 +48,20 @@ ln -s /mnt/c/Users/$WINDOWS_USER/.ssh ~
 ssh -T git@github.com
 ```
 
+## Pot. Setup Git-Credentials-Manager (https repos)
+
+```
+gpg --gen-key
+#<enter email>
+...
+gpg --list-keys
+pass init <gpg-id> <- identified via gpg --list-keys
+
+# adjust expiration (if required)
+gpg --quick-set-expire <gpg-id> 0
+gpg --quick-set-expire <gpg-id> 0 '*'
+```
+
 ## Setup VcXsrv on Windows
 
 Download and install _VcXsrv_ on Windows https://sourceforge.net/projects/vcxsrv/files/latest/download
