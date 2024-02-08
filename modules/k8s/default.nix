@@ -4,7 +4,7 @@ let
   minikube = pkgs.unstable.minikube;
   k9s = pkgs.unstable.k9s;
   kubectl = pkgs.unstable.kubectl;
-  # kind = pkgs.unstable.kind;
+  kind = pkgs.unstable.kind;
 in
 {
   home.packages = [
@@ -12,6 +12,6 @@ in
     minikube
     k9s
     kubectl
-    # kind
+    kind
   ];
 }
