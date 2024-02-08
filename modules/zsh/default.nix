@@ -167,6 +167,7 @@ in
       edge = "microsoft-edge-stable";
 
       k = "kubectl";
+      t = "terraform";
     };
     history = {
       save = 10000;

@@ -1,11 +1,11 @@
 { pkgs, ... }:
 let
   terraform = pkgs.unstable.terraform;
-  # terraform-providers-kubernetes = pkgs.unstable.terraform-providers.kubernetes;
+  tflint = pkgs.unstable.tflint;
 in
 {
   home.packages = [
     terraform
-    # terraform-providers-kubernetes
+    tflint
   ];
 }
