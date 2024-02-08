@@ -165,6 +165,8 @@ in
       idea = "idea-ultimate"; # blocks terminal
       ff = "firefox";
       edge = "microsoft-edge-stable";
+
+      k = "kubectl";
     };
     history = {
       save = 10000;
@@ -241,10 +243,10 @@ in
         # "helm"
 
         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/minikube
-        # "minikube"
+        "minikube"
 
         # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/kubectl
-        # "kubectl"
+        "kubectl"
       ];
       theme = "simple";
     };

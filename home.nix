@@ -13,6 +13,7 @@ let
   zsh = import ./modules/zsh;
   intellij = import ./modules/intellij;
   db = import ./modules/db;
+  k8s = import ./modules/k8s;
 
   unstable-packages = with pkgs.unstable; [
     azure-cli
@@ -100,6 +101,7 @@ in
     zsh
     intellij
     db
+    k8s
   ];
 
   home.stateVersion = "22.11";
