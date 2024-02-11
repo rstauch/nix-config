@@ -168,6 +168,7 @@ in
 
       k = "kubectl";
       t = "terraform";
+      mk = "minikube";
     };
     history = {
       save = 10000;
