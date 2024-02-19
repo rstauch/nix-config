@@ -9,6 +9,7 @@ let
   lesspipe = pkgs.unstable.lesspipe;
   less = pkgs.unstable.less;
   vscode = pkgs.unstable.vscode;
+  barrier = pkgs.unstable.barrier;
   any-nix-shell = pkgs.unstable.any-nix-shell;
 in
 {
@@ -28,6 +29,7 @@ in
 
     # other
     any-nix-shell
+    barrier
   ];
 
   # history = CTRL + R

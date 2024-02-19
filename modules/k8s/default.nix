@@ -7,6 +7,7 @@ let
   kind = pkgs.unstable.kind;
   kubectx = pkgs.unstable.kubectx;
   kubetail = pkgs.unstable.kubetail;
+  qemu = pkgs.unstable.qemu;
 in
 {
   home.packages = [
@@ -17,5 +18,6 @@ in
     kind
     kubectx
     kubetail
+    qemu
   ];
 }
