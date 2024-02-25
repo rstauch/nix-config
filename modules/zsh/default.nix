@@ -170,7 +170,9 @@ in
 
       k = "kubectl";
       t = "terraform";
+      tf = "terraform";
       mk = "minikube";
+      f = "fuck";
     };
     history = {
       save = 10000;

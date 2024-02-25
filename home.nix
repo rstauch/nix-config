@@ -21,6 +21,7 @@ let
     bottom
     bruno # offline only postman replacement
     camunda-modeler
+    corepack_18
     coreutils
     curl
     dos2unix
@@ -42,9 +43,9 @@ let
     microsoft-edge
     mc
     nerdfonts
-    nodejs_18
     openssl
     p7zip
+    python3
     # postman # currently 404
     procs
     q-text-as-data # Run SQL directly on CSV or TSV files, https://github.com/harelba/q
@@ -56,7 +57,6 @@ let
     wget
     xdg-utils
     xz
-    yarn
     zip
 
     _1password-gui

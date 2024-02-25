@@ -4,7 +4,7 @@
 , ...
 }: {
   time.timeZone = "UTC";
-
+  boot.tmp.cleanOnBoot = true;
 
   networking.hostName = "${hostname}";
 
